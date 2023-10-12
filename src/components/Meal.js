@@ -20,7 +20,7 @@ export default function Meal() {
                 setCategory(meal.strCategory)
                 setInstructions(meal.strInstructions)
                 setImage(meal.strMealThumb)
-                setIngredients(getIngredientsArray(meal))
+                setIngredients(getIngredients(meal))
             }).catch(error => {
                 alert("Issue with finding recipe")
             })
@@ -35,7 +35,7 @@ export default function Meal() {
                     setCategory(meal.strCategory);
                     setInstructions(meal.strInstructions);
                     setImage(meal.strMealThumb);
-                    setIngredients(getIngredientsArray(meal))
+                    setIngredients(getIngredients(meal))
                 } else {
                     alert('No matching recipe found')
                 }
@@ -45,7 +45,7 @@ export default function Meal() {
         setSearch('');
     }
 
-    const getIngredientsArray = (meal) => {
+    const getIngredients = (meal) => {
         const ingredientsArray = [];
         for (let i = 1; i <= 20; i++) {
             const ingredient = meal['strIngredient' + i];
